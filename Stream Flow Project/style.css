@@ -10,7 +10,272 @@ body {
     color: #ffffff; 
     font-family: 'Poppins', sans-serif;
 }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
+body {
+    background-color: #141414; 
+    color: #ffffff; 
+    font-family: 'Poppins', sans-serif;
+}
+
+
+.main-header {
+    background-color: rgba(20, 20, 20, 0.8);
+    padding: 15px 60px;
+    position: fixed; 
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    height: 35px;
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.main-nav a {
+    color: #e5e5e5;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.main-nav a:hover, .main-nav a.active {
+    color: #ffffff;
+    font-weight: 500;
+}
+
+.user-menu {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.search-bar {
+    background-color: transparent;
+    border: 1px solid #ccc;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+
+.user-avatar {
+    height: 32px;
+    border-radius: 4px;
+}
+
+.notification-bell {
+    height: 24px;
+}
+
+
+.hero-section {
+    height: 80vh; 
+    background-image: linear-gradient(to top, rgba(20, 20, 20, 1) 10%, rgba(20, 20, 20, 0) 50%), url('images/superman-background.jpg');
+    background-size: cover;
+    background-position: center top;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 60px;
+}
+
+.hero-studio-logo {
+    width: 150px;
+    margin-bottom: 10px;
+}
+
+.hero-title {
+    font-size: 60px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.hero-buttons .btn {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 700;
+    margin-right: 15px;
+    cursor: pointer;
+    transition: opacity 0.3s;
+}
+
+.hero-buttons .btn:hover {
+    opacity: 0.8;
+}
+
+.btn-primary {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.btn-secondary {
+    background-color: rgba(109, 109, 110, 0.7);
+    color: #ffffff;
+}
+
+
+.carousel-section {
+    padding: 20px 60px;
+}
+
+.carousel-section h2 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.movie-list {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto; 
+    overflow-y: hidden;
+    padding-bottom: 15px; 
+}
+
+
+.movie-list::-webkit-scrollbar {
+    display: none;
+}
+
+.movie-poster img {
+    width: 180px; 
+    border-radius: 4px;
+    transition: transform 0.3s ease;
+}
+
+.movie-poster img:hover {
+    transform: scale(1.05); 
+    cursor: pointer;
+}
+
+
+.movie-hero {
+    height: 90vh; 
+  
+    background-image: 
+        linear-gradient(to right, rgba(20, 20, 20, 1) 5%, rgba(20, 20, 20, 0.5) 60%, rgba(20, 20, 20, 0) 100%), 
+        url('images/superman-details-background.jpg.png');
+    background-size: cover;
+    background-position: center top;
+    display: flex;
+    align-items: center; 
+    padding: 0 60px;
+}
+
+.hero-details {
+    max-width: 50%;
+}
+
+.studio-logo {
+    width: 120px;
+    margin-bottom: 10px;
+}
+
+.movie-title {
+    font-size: 52px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.metadata {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.metadata .tag {
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    padding: 2px 6px;
+    font-size: 12px;
+    border-radius: 4px;
+}
+
+.metadata .age-rating {
+    background-color: #e5a00d;
+    color: #141414;
+    border: none;
+    font-weight: 700;
+}
+
+.movie-info {
+    font-size: 14px;
+    color: #c9c9c9;
+    margin-bottom: 10px;
+}
+
+.movie-description {
+    font-size: 15px;
+    line-height: 1.5;
+    margin-bottom: 25px;
+    max-width: 550px;
+}
+
+.action-buttons .btn {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 700;
+    margin-right: 15px;
+    cursor: pointer;
+    transition: opacity 0.3s;
+}
+
+.action-buttons .btn:hover {
+    opacity: 0.8;
+}
+
+
+.content-tabs {
+    padding: 0 60px;
+    border-bottom: 1px solid #333;
+    margin-top: -30px; 
+    position: relative; 
+    z-index: 10;
+}
+
+.content-tabs ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.content-tabs a {
+    color: #a8a8a8;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 700;
+    display: inline-block;
+    padding: 15px 0;
+    border-bottom: 3px solid transparent; 
+    transition: all 0.3s;
+}
+
+.content-tabs a.active, .content-tabs a:hover {
+    color: #ffffff;
+    border-bottom-color: #e50914; 
+}
 
 .main-header {
     background-color: rgba(20, 20, 20, 0.8);
