@@ -40,6 +40,9 @@ body {
 
 .logo img {
     height: 35px;
+    height: 70px;
+    width: 200px;
+    border-radius: 4px;
 }
 
 .main-nav ul {
@@ -84,6 +87,8 @@ body {
 }
 
 
+
+
 .hero-section {
     height: 80vh; 
     background-image: linear-gradient(to top, rgba(20, 20, 20, 1) 10%, rgba(20, 20, 20, 0) 50%), url('images/superman-details-background.jpg.png');
@@ -93,6 +98,7 @@ body {
     flex-direction: column;
     justify-content: center;
     padding-left: 60px;
+    
 }
 
 .hero-studio-logo {
@@ -170,6 +176,13 @@ body {
 
 .movie-hero {
     height: 90vh; 
+
+    .logo img {
+        height: 35px;
+        height: 70px;
+        width: 200px;
+        border-radius: 4px;
+    }
   
     background-image: 
         linear-gradient(to right, rgba(20, 20, 20, 1) 5%, rgba(20, 20, 20, 0.5) 60%, rgba(20, 20, 20, 0) 100%), 
@@ -186,8 +199,8 @@ body {
 }
 
 .studio-logo {
-    width: 120px;
-    margin-bottom: 10px;
+    width: 500px;
+    margin-bottom: 2px;
 }
 
 .movie-title {
@@ -293,7 +306,10 @@ body {
 }
 
 .logo img {
-    height: 35px;
+    height: 70px;
+    width: 200px;
+    border-radius: 4px;
+    
 }
 
 .main-nav ul {
@@ -318,6 +334,8 @@ body {
     display: flex;
     align-items: center;
     gap: 20px;
+
+
 }
 
 .search-bar {
@@ -329,12 +347,12 @@ body {
 }
 
 .user-avatar {
-    height: 32px;
-    border-radius: 4px;
+    height: 50px;
+    border-radius: 50px;
 }
 
 .notification-bell {
-    height: 24px;
+    height: 40px;
 }
 
 
