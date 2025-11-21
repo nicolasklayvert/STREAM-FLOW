@@ -5,16 +5,34 @@ from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-
+from pathlib import Path # <-- Importa a ferramenta para lidar com caminhos de forma universal
 
 driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
 driver.set_window_size(2500, 1180)
 
-# --- Caminhos Absolutos Fixos
-url_inicial = 'file:///C:/Users/super/Downloads/STREAM-FLOW/Stream%20Flow%20Project/index.html'
+# --- Configuração de Caminho Dinâmico e Portátil ---
+# Isso garante que os testes funcionem em qualquer máquina, sem caminhos fixos.
+
+# 1. Encontra a pasta onde este script está (pasta 'Testes')
+TEST_DIR = Path(__file__).parent
+# 2. Sobe para a pasta principal do projeto (pasta 'STREAM-FLOW')
+PROJECT_ROOT = TEST_DIR.parent 
+
+# 3. Define onde estão os arquivos HTML, entrando na subpasta 'Stream Flow Front'
+HTML_FILES_DIR = PROJECT_ROOT / "Stream Flow Front" 
+
+# Constrói as URLs completas para os arquivos HTML (no formato 'file://' que o Selenium usa)
+url_index = (HTML_FILES_DIR / "index.html").as_uri()
+url_movie = (HTML_FILES_DIR / "movie.html").as_uri()
+
+# A página que será aberta no início
+url_inicial = url_index
+
+print(f"URL Index (dinâmica): {url_index}")
+# --- Fim da Configuração de Caminho ---
 
 try:
-    # Abrir a página inicial
+    # Abrir a página inicial (usando a URL dinâmica e portátil)
     driver.get(url_inicial)
     print("✅ SUCESSO: Página 'index.html' aberta.")
     time.sleep(1)
@@ -43,6 +61,7 @@ try:
     botao_info.click()
     print("-> AÇÃO: Clicado no botão 'Mais Informações'.")
     
+    # O script valida que navegamos para 'movie.html'
     wait.until(EC.url_contains('movie.html'))
     
     # Verifica se a URL atual corresponde à página esperada.
@@ -82,4 +101,6 @@ except Exception as e:
 finally:
     print("\nFechando o navegador em 5 segundos...")
     time.sleep(5)
-    driver.quit()
+    driver.quit()       
+
+#teste commit
